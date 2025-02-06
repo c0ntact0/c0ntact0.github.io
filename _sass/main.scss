@@ -188,3 +188,13 @@ a {
         //margin: 0 1em; // Adds spacing between images if multiple
     }
 }
+
+@media (min-width: 769px) {
+    .screenshots-link {
+        pointer-events: none;
+        /* Desativa o clique visualmente */
+        text-decoration: none;
+        cursor: not-allowed;
+    }
+}
+

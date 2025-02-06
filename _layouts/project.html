@@ -3,6 +3,7 @@ layout: default
 submenu: true
 group: projects
 ---
+
 {% assign item = nil %}
 {% for it in site.data.projects %}
     {% if it.name == page.title %}
@@ -20,14 +21,19 @@ group: projects
     {{ content }}
 </div>
 {% if item.screenshots.size > 0 %}
+
 <div>
     <h3>Screenshots</h3>
     {% assign num = item.screenshots.size | minus: 1 %}
     {% for i in (0..num) %}
+
     <p translate="no" align="center">{{ item.labels[i] }}</p>
+    <a href="{{ item.screenshots[i] }}" class="screenshots-link" target="_blank">
     <div class="project-screenshots">
         <img src="{{ item.screenshots[i] }}" alt="Image can not be displayed or found!">
     </div>
+</a>
+
     {% endfor %}
 </div>
 
