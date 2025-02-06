@@ -1,0 +1,14 @@
+- name: ReelMyFiles
+  github: https://github.com/c0ntact0/REEL_MY_FILES
+  screenshots: [/assets/images/reel-my-files/general.png,
+  /assets/images/reel-my-files/ReelOperationsTasksList.png,
+  /assets/images/reel-my-files/IngestSettings.png]
+  labels: ["General tab","Reel Operations Tasks List tab","Ingest Settings tab"]
+  icon: /assets/images/reel-my-files/app-icon.png
+- name: ConformAll
+  github: https://github.com/c0ntact0/DAVINCI_CONFORM_ALL
+  screenshots: [/assets/images/conform-all/operation.png,/assets/images/conform-all/profiles-settings.png,/assets/images/conform-all/global-settings.png]
+  labels: ["Operation tab","Profiles Settings tab","Global Settings tab"]
+  icon: /assets/images/conform-all/app-icon.png
+- name: "Get my music back"
+  github: https://github.com/c0ntact0/GET_MY_MUSIC_BACK

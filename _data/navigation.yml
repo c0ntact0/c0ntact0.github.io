@@ -1,6 +1,9 @@
 - name: Home
   link: /
+  group: home
 - name: About
   link: /about.html
+  group: about
 - name: Projects
   link: /projects.html
+  group: projects

@@ -1,0 +1,34 @@
+---
+layout: default
+submenu: true
+group: projects
+---
+{% assign item = nil %}
+{% for it in site.data.projects %}
+    {% if it.name == page.title %}
+        {% assign item = it %}
+        {% break %}
+    {% endif %}
+    {% endfor %}
+    
+<h1 translate="no"> {{ page.title }} </h1>
+    {% if item.icon %}
+        <img src={{item.icon}} width="50" style="float:left; margin:0px 5px">
+    {% endif %}
+<div>
+    GitHub repository: <a href="{{ item.github }}" target="_blank">{{ item.github }}</a>
+    {{ content }}
+</div>
+{% if item.screenshots.size > 0 %}
+<div>
+    <h3>Screenshots</h3>
+    {% assign num = item.screenshots.size | minus: 1 %}
+    {% for i in (0..num) %}
+    <p translate="no" align="center">{{ item.labels[i] }}</p>
+    <div class="project-screenshots">
+        <img src="{{ item.screenshots[i] }}" alt="Image can not be displayed or found!">
+    </div>
+    {% endfor %}
+</div>
+
+{% endif %}
