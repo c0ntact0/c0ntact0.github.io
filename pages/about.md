@@ -4,7 +4,7 @@ title: About
 submenu: false
 group: about
 foto_width: "200px"
-permalink: /:basename/
+permalink: /:basename
 ---
 <img src="/assets/images/me.jpeg" width={{ page.foto_width }} style="float:left; border:5px solid black;margin:0px 5px">
 
