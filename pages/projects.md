@@ -3,7 +3,7 @@ layout: default
 title: Projects
 submenu: true
 group: projects
-permalink: /:basename
+permalink: /:basename/
 ---
 # Projects
 
