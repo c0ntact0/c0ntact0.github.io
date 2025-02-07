@@ -1,0 +1,21 @@
+---
+layout: default
+submenu: false
+group: blog
+permalink: /post/
+---
+
+<div>
+    <div>
+    <h2>
+        {{ page.title }}
+    </h2>
+    </div>
+    <div>
+        
+        Published: {{ page.date | date: "%Y-%m-%d %H:%M:%S" }}
+    </div>
+</div>
+<hr>
+
+{{ content }}

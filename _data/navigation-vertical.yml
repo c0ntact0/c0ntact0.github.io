@@ -1,9 +1,9 @@
 - group: projects
   name: ConformAll
-  link: /projects/conform-all.html
+  link: /projects/conform-all/
 - group: projects
   name: ReelMyFiles
-  link: /projects/reel-my-files.html
+  link: /projects/reel-my-files
 - group: projects
   name: "Get my music back"
-  link: /projects/get-my-music-back.html
+  link: /projects/get-my-music-back
