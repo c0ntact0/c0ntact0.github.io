@@ -54,6 +54,7 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-permalink: pretty
+posts:
+  permalink: pretty
 pages:
   permalink: /:path/:basename
