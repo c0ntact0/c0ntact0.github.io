@@ -9,26 +9,28 @@
 </head>
 
 <body>
-    <div>
+    <div class="nav-bar">
+        
         {% include navigation.html %}
+        {% include translate.html %}
+
     </div>
     
     <div class="container">
         
         {% if page.submenu %}
-        <div class="sidebar">{% include navigation-vertical.html %}</div>
+        <div class="sidebar" id="sidebar">{% include navigation-vertical.html %}</div>
         <div class="main-content">
-            {% include translate.html %}
             {{ content }}
         </div>
         {% else %}
         <div class="main-content">
-            {% include translate.html %}
             {{ content }}
         </div>
         {% endif %}
     </div>
 
+    <script src="/assets/js/scripts.js"></script>
 </body>
 
 </html>

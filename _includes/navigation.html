@@ -1,4 +1,9 @@
 <nav class="main-menu">
+    {% if page.submenu %}
+    <div id="btsidebar" class="hamburger" onclick="toggleSidebar()">
+    Show Sidebar
+    </div>
+    {% endif %}
     {% for item in site.data.navigation %}
     <a href="{{ item.link }}" {% if item.group contains page.group %} class="selected-main" {% else %} class="normal-main" {% endif %}>{{ item.name }}</a>
     {% endfor %}
