@@ -56,5 +56,5 @@ plugins:
 
 posts:
   permalink: pretty
-#pages:
-#  permalink: /:path/:basename
+pages:
+  permalink: /:path/:basename/
