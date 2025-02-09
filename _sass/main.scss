@@ -138,10 +138,12 @@ div {
 
 .container {
     display: flex;
-    width: 100%;
     height: 100%;
     flex-direction: row;
     align-items: stretch; // This ensures children fill available space vertically
+    justify-content: flex-start;
+    margin: 0 auto;
+    background-color: aliceblue;
 }
 
 .sidebar {
@@ -155,17 +157,20 @@ div {
 
 .main-content {
     flex: 1; // Allows the main content to grow and fill the remaining space
-    width: 100;
+    max-width: 100ch;
+    //width: 100;
     height: 100%;
     background-color: white;
     padding: 20px;
-    margin: 0; // Remove any margin that might interfere with the layout
+    //margin: 0; // Remove any margin that might interfere with the layout
     overflow-y: auto; // Adds scrolling if the content is too long
+    margin: 0 auto;
 }
 
 .wrap-link {
 
     text-align: left;
+
     a {
         word-wrap: break-word;
         overflow-wrap: break-word;
@@ -216,9 +221,55 @@ a {
     text-decoration: none;
 }
 
+#cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1001; // Increased z-index to ensure it appears on top
+    box-sizing: border-box;
+}
+
+#cookie-banner button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#cookie-banner button:hover {
+    background-color: #45a049;
+}
+
+@media screen and (max-width: 768px) {
+    #cookie-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    #cookie-banner button {
+        margin: 0.5rem 0 0 0;
+        width: 100%;
+    }
+}
+
+
 /* Mostrar o botão hamburger em telas pequenas */
 @media screen and (max-width: 768px) {
-    
+    .container {
+        width: 100%;
+    }
+
     .hamburger {
         display: block;
     }
@@ -251,5 +302,7 @@ a {
     .translate {
         align-items: center;
     }
+
+
 
 }

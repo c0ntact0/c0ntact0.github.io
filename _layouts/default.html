@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <div class="nav-bar">
         
         {% include navigation.html %}
@@ -29,8 +30,15 @@
         </div>
         {% endif %}
     </div>
+    
 
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" style="display: none;">
+        <p>We use cookies to improve your experience. Do you accept?</p>
+        <button id="accept-cookies" onclick="cookieConsent()">Accept</button>
+    </div>
     <script src="/assets/js/scripts.js"></script>
+
 </body>
 
 </html>

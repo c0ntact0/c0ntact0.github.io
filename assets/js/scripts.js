@@ -12,3 +12,10 @@ function toggleSidebar() {
     //sidebar.style.display = sidebar.style.display === '' ? 'inline' : '';
 
 }
+
+function cookieConsent() {
+    console.log("Consent")
+    localStorage.setItem('cookiesAccepted', true);
+    document.getElementById('cookie-banner').style.display = 'none';
+    loadThirdPartyScripts();
+}
