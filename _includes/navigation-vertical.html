@@ -1,7 +1,11 @@
 <nav translate="no" class="vertical-menu">
+    <div class="vertical-menu-title">
+        {{ page.group | capitalize }}
+    </div>
     {% for item in site.data.navigation-vertical %}
+    {% assign link = item.link | append: ".html" %}
     {% if page.group == item.group %}
-    <a href="{{ item.link }}" {% if page.url == item.link %} class="selected-vertical" {% else %} class="normal-vertical" {% endif %}>{{ item.name }}</a>
+    <a href="{{ item.link }}" {% if page.url == link %} class="selected-vertical" {% else %} class="normal-vertical" {% endif %}>{{ item.name }}</a>
     {% endif %}
     {% endfor %}
 </nav>

@@ -16,6 +16,7 @@ function toggleSidebar() {
 function cookieConsent() {
     console.log("Consent")
     localStorage.setItem('cookiesAccepted', true);
+    //document.getElementById('cookie-banner').remove();
     document.getElementById('cookie-banner').style.display = 'none';
     loadThirdPartyScripts();
 }
