@@ -4,84 +4,82 @@ title: My Blog
 group: blog
 submenu: true
 ---
-<button id="btReverse" >Reverse Order</button>
-<div id="conteudo"></div>
+<div class="blog">
+<div class="posts">
+
+    {% for post in paginator.posts %}
+    <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+    <p class="author">
+        <span class="date">{{ post.date | date: "%Y-%m-%d %H:%M"}}</span>
+    </p>
+    <div class="content">
+        {{ post.content }}
+    </div>
+    <hr>
+    {% endfor %}
+</div>
+
+{% assign previous = "disabled" %}
+{% assign next = "disabled" %}
+<!-- Pagination links -->
+
+
+<div class="pagination">
+    {% if paginator.previous_page %}
+    {% assign previous = "" %}
+    {% endif %}
+
+    {% if paginator.next_page %}
+    {% assign next = "" %}
+
+    {% endif %}
+    <button id="btFirst" {{ previous }}>First</button>
+    <button id="btPrevious" {{ previous }}>Previous</button>
+    <span class="page_number ">
+        Page: {{ paginator.page }} of {{ paginator.total_pages }}
+    </span>
+    <button id="btNext" {{ next }}>Next</button>
+    <button id="btLast" {{ next }}>Last</button>
+</div>
+</div>
+
 
 <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const order = urlParams.get('order');
     document.addEventListener("DOMContentLoaded", function () {
-            const botao = document.getElementById("btReverse");
+        const botao = document.getElementById("btFirst");
 
-            botao.addEventListener("click", function () {
-                btReverseBlogOrder(order,`{{ page.url }}`);
-            });
+        botao.addEventListener("click", function () {
+            gotoPage("/blog");
         });
 
-    let conteudo = '';
+    });
 
-    if (order === 'asc') {
-        conteudo = `{% for post in paginator.posts %}
-<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-<p class="author">
-    <span class="date">{{ post.date | date: "%Y-%m-%d %H:%M"}}</span>
-</p>
-<div class="content">
-    {{ post.content }}
-</div>
-<hr>
-{% endfor %}
+    document.addEventListener("DOMContentLoaded", function () {
+        const botao = document.getElementById("btPrevious");
 
-<!-- Pagination links -->
-<div class="pagination">
-    {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">
-        Previous
-    </a>
-    {% else %}
-    <span class="previous">Previous</span>
-    {% endif %}
-    <span class="page_number ">
-        Page: {{ paginator.page }} of {{ paginator.total_pages }}
-    </span>
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-    {% else %}
-    <span class="next ">Next</span>
-    {% endif %}
-</div>`;
-    } else {
+        botao.addEventListener("click", function () {
+            gotoPage("{{ paginator.previous_page_path }}");
+        });
 
-        conteudo = `{% for post in paginator.posts reversed %}
-<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-<p class="author">
-    <span class="date">{{ post.date | date: "%Y-%m-%d %H:%M"}}</span>
-</p>
-<div class="content">
-    {{ post.content }}
-</div>
-<hr>
-{% endfor %}
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        const botao = document.getElementById("btNext");
 
-<!-- Pagination links -->
-<div class="pagination">
-    {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">
-        Previous
-    </a>
-    {% else %}
-    <span class="previous">Previous</span>
-    {% endif %}
-    <span class="page_number ">
-        Page: {{ paginator.page }} of {{ paginator.total_pages }}
-    </span>
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-    {% else %}
-    <span class="next ">Next</span>
-    {% endif %}
-</div>`;
+        botao.addEventListener("click", function () {
+            gotoPage("{{ paginator.next_page_path }}");
+        });
+
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        const botao = document.getElementById("btLast");
+
+        botao.addEventListener("click", function () {
+            gotoPage("/blog/page{{ paginator.total_pages }}/");
+        });
+
+    });
+
+    function gotoPage(url) {
+        window.open(url, "_self")
     }
-
-    document.getElementById('conteudo').innerHTML = conteudo; // Exibir o conteúdo
 </script>

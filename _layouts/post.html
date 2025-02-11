@@ -1,20 +1,27 @@
 ---
 layout: default
 ---
-<button id="btReturn">Return to list</button>
+<button id="btReturnList">Return to Posts list</button>
+<button id="btReturnPosts">Return to Posts</button>
 <script>
     const urlParams = new URLSearchParams(window.location.search);
     const order = urlParams.get('order');
     document.addEventListener("DOMContentLoaded", function () {
-            const botao = document.getElementById("btReturn");
+            const botao = document.getElementById("btReturnList");
 
             botao.addEventListener("click", function () {
-                btReturn();
+                btReturn("/blog/list/?order=" + order);
             });
         });
+        document.addEventListener("DOMContentLoaded", function () {
+                const botao = document.getElementById("btReturnPosts");
 
-        function btReturn() {
-            window.open("/blog/list/?order=" + order,"_self")
+                botao.addEventListener("click", function () {
+                    btReturn("/blog/");
+                });
+            });
+        function btReturn(url) {
+            window.open(url,"_self")
         }
 </script>
 <div>

@@ -121,16 +121,14 @@ div {
     z-index: 1000;
 }
 
-
-
-
 .vertical-menu {
 
     padding: 0;
     margin: 0;
 
 
-    a,.vertical-menu-title {
+    a,
+    .vertical-menu-title {
         width: 100%;
         margin-bottom: 3px;
         display: block;
@@ -263,7 +261,75 @@ button:hover {
     background-color: #45a049;
 }
 
+button:disabled {
+    background-color: lightgray;
+}
+
+/*
+.pagination {
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    justify-content: center;
+    z-index: 1001;
+    button {
+        width: 80px;
+        }
+        }
+        */
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+}
+
+.posts {
+    width: 100%;
+    margin-bottom: 60px;
+    margin-right: auto;
+}
+
+.pagination {
+    display: flex;
+    gap: 10px;
+    position: fixed;
+    bottom: 0;
+    //width: 80%;
+    background-color: white; // You can change this to match your theme
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Optional shadow for better visibility
+    z-index: 1000; // Ensure it stays on top of other elements
+    justify-content: center;
+    align-items: center;
+
+    button {
+        width: 80px;
+    }
+}
+
+
+
+
 @media screen and (max-width: 768px) {
+
+    .posts {
+            margin-bottom: 20px;
+        }
+
+    .pagination {
+        gap: 5px;
+        padding: 5px;
+        width: 100%;
+        
+        font-size: 60%;
+        button {
+                font-size: 110%;
+                    width: 70px;
+                }
+    }
+
     .container {
         width: 100%;
     }

@@ -20,7 +20,7 @@ group: blog
 
     if (order === 'asc') {
         conteudo = `<ul>
-            {% for post in site.posts %}
+            {% for post in site.posts reversed %}
             <li>
                 <a href="{{ post.url }}?order=asc">{{ post.date | date: "%Y-%m-%d" }} - {{ post.title }}</a>
             </li>
@@ -28,7 +28,7 @@ group: blog
         </ul>`;
     } else {
         conteudo = `<ul>
-            {% for post in site.posts reversed %}
+            {% for post in site.posts %}
             <li>
                 <a href="{{ post.url }}?order=desc">{{ post.date | date: "%Y-%m-%d" }} - {{ post.title }}</a>
             </li>
