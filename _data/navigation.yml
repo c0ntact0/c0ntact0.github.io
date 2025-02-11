@@ -8,5 +8,5 @@
   link: /projects
   group: projects
 - name: Blog
-  link: /blog
+  link: /blog/?order=desc
   group: blog

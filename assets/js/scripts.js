@@ -20,3 +20,13 @@ function cookieConsent() {
     document.getElementById('cookie-banner').style.display = 'none';
     loadThirdPartyScripts();
 }
+
+function btReverseBlogOrder(state,url) {
+    let order = state;
+    if (order === 'asc') {
+        order = 'desc';
+    } else {
+        order = 'asc';
+    }
+    window.open(url + "?order=" + order,"_self")
+}

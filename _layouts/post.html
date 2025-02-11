@@ -1,10 +1,24 @@
 ---
 layout: default
-submenu: false
-group: blog
 ---
+<button id="btReturn">Return to list</button>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const order = urlParams.get('order');
+    document.addEventListener("DOMContentLoaded", function () {
+            const botao = document.getElementById("btReturn");
 
+            botao.addEventListener("click", function () {
+                btReturn();
+            });
+        });
+
+        function btReturn() {
+            window.open("/blog/list/?order=" + order,"_self")
+        }
+</script>
 <div>
+
     <div>
     <h2>
         {{ page.title }}

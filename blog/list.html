@@ -1,0 +1,40 @@
+---
+layout: default
+submenu: true
+group: blog
+---
+<button id="btReverse">Reverse Order</button>
+<div id="conteudo"></div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const order = urlParams.get('order');
+        document.addEventListener("DOMContentLoaded", function () {
+                const botao = document.getElementById("btReverse");
+
+                botao.addEventListener("click", function () {
+                    btReverseBlogOrder(order, `{{ page.url }}`);
+                });
+            });
+    let conteudo = '';
+
+    if (order === 'asc') {
+        conteudo = `<ul>
+            {% for post in site.posts %}
+            <li>
+                <a href="{{ post.url }}?order=asc">{{ post.date | date: "%Y-%m-%d" }} - {{ post.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>`;
+    } else {
+        conteudo = `<ul>
+            {% for post in site.posts reversed %}
+            <li>
+                <a href="{{ post.url }}?order=desc">{{ post.date | date: "%Y-%m-%d" }} - {{ post.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>`;
+    }
+
+    document.getElementById('conteudo').innerHTML = conteudo; // Exibir o conteúdo
+</script>

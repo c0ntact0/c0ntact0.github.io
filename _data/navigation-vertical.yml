@@ -1,16 +1,16 @@
 - group: projects
   name: ConformAll
-  link: /projects/conform-all
+  link: /projects/conform-all/
 - group: projects
   name: ReelMyFiles
-  link: /projects/reel-my-files
+  link: /projects/reel-my-files/
 - group: projects
   name: "Get my music back"
-  link: /projects/get-my-music-back
+  link: /projects/get-my-music-back/
 
 - group: blog
-  name: Ascendente
-  link: 
+  name: Posts
+  link: /blog/
 - group: blog
-  name: Descendente
-  link: 
+  name: Posts list
+  link: /blog/list/

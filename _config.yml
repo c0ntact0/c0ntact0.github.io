@@ -33,6 +33,7 @@ github_username:  c0ntact0
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -54,7 +55,10 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-posts:
-  permalink: pretty
+permalink: pretty
+
+paginate: 5
+paginate_path: "/blog/page:num/"
+
 pages:
   permalink: /:path/:basename/
