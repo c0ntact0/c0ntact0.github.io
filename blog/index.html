@@ -19,27 +19,38 @@ submenu: true
     {% endfor %}
 </div>
 
-{% assign previous = "disabled" %}
-{% assign next = "disabled" %}
+{% assign previous = false %}
+{% assign next = true %}
 <!-- Pagination links -->
 
 
 <div class="pagination">
+    <!--
     {% if paginator.previous_page %}
-    {% assign previous = "" %}
+    {% assign previous = true %}
     {% endif %}
 
     {% if paginator.next_page %}
-    {% assign next = "" %}
+    {% assign next = false %}
 
     {% endif %}
+
+    
     <button id="btFirst" {{ previous }}>First</button>
     <button id="btPrevious" {{ previous }}>Previous</button>
+    -->
+    <img id="btFirst" {% if paginator.previous_page %} class="pages-buttons" {% else %} class="pages-buttons-disabled" {% endif %} src="/assets/images/reverse.png">
+    <img id="btPrevious" {% if paginator.previous_page %} class="pages-buttons" {% else %} class="pages-buttons-disabled" {% endif %} src="/assets/images/back.png" {{ previous }}>
     <span class="page_number ">
         Page: {{ paginator.page }} of {{ paginator.total_pages }}
     </span>
-    <button id="btNext" {{ next }}>Next</button>
-    <button id="btLast" {{ next }}>Last</button>
+    <!--
+        <button id="btNext" {{ next }}>Next</button>
+        <button id="btLast" {{ next }}>Last</button>
+    -->
+    <img id="btNext" {% if paginator.next_page %} class="pages-buttons" {% else %} class="pages-buttons-disabled" {% endif %} src="/assets/images/front.png" {{ next }}>
+    <img id="btLast" {% if paginator.next_page %} class="pages-buttons" {% else %} class="pages-buttons-disabled" {% endif %} class="pages-buttons" src="/assets/images/forward.png" {{ next }}>
+
 </div>
 </div>
 

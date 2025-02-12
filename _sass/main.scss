@@ -309,8 +309,16 @@ button:disabled {
     }
 }
 
+.pages-buttons {
+    width: 50px;
+    height: 50px;
+}
 
+.pages-buttons-disabled {
 
+    @extend .pages-buttons;
+    opacity: 0.3;
+}
 
 @media screen and (max-width: 768px) {
 
@@ -323,11 +331,8 @@ button:disabled {
         padding: 5px;
         width: 100%;
         
-        font-size: 60%;
-        button {
-                font-size: 110%;
-                    width: 70px;
-                }
+        font-size: 80%;
+
     }
 
     .container {
